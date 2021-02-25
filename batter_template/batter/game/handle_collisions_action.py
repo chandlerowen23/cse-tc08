@@ -1,6 +1,7 @@
 import random
 from game import constants
 from game.action import Action
+from game.point import Point
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -15,7 +16,13 @@ class HandleCollisionsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        pass
+        ball = cast["ball"][0] # There's only one ball
+        brick = cast["brick"]
+        for i in brick:
+            if ball.get_position().equals(i.get_position()):
+                brick.remove(i)
+                velocity = Point(-1, 1)
+                ball.set_velocity(velocity)
 
         
         # marquee = cast["marquee"][0] # there's only one
