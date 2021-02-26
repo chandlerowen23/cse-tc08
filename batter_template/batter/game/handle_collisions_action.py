@@ -11,6 +11,8 @@ class HandleCollisionsAction(Action):
     Stereotype:
         Controller
     """
+    def __init__(self):
+        self.count = 0
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -21,6 +23,7 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0] # There's only one ball
         brick = cast["brick"] # there's multiple bricks
         paddle = cast["paddle"][0] #  there's only one paddle
+        score = cast["score"][0] #  there's only one paddle
 
         #  check if the ball hits the paddle
         for i in range(11):
@@ -41,6 +44,9 @@ class HandleCollisionsAction(Action):
                 v_y = ball._velocity.get_y()
                 velocity = Point(v,v_y*-1)
                 ball.set_velocity(velocity)
+                self.count += 1
+                score.set_text(f"Score: {self.count}")
+
 
         # check if the ball hits the top of the screen
         if ball._position.get_y() == 1:
