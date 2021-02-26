@@ -41,6 +41,7 @@ def main(screen):
     ball.set_text("@")
     ball.set_position(position)
     ball.set_velocity(velocity)
+    ball.set_text("@")
     cast["ball"] = [ball]
     
     # create the script {key: tag, value: list}

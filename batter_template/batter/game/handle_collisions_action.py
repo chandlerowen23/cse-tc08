@@ -56,20 +56,10 @@ class HandleCollisionsAction(Action):
             velocity = Point(v_x*-1, v_y)
             ball.set_velocity(velocity)
 
-        #  check if the ball hits the bottom of the screen
-        if ball._position.get_y() == (constants.MAX_Y - 1):
+        # check if the ball hits the bottom of the screen
+        if (ball._position.get_y()) == (constants.MAX_Y - 1):
             velocity = Point(0,0)
             ball.set_velocity(velocity)
-            # add game over to the screen
-
-
-            #this wouldnt work
-            # position = Point(constants.MAX_X/2, constants.MAX_Y/2)
-            # velocity = Point(0,0)
-            # game_over = Actor()
-            # game_over.set_text("Game Over!")
-            # game_over.set_position(position)
-            # game_over.set_velocity(velocity)
-            # Outputservice.draw_actor(game_over)
+            ball.set_text("Game Over")
             
 
