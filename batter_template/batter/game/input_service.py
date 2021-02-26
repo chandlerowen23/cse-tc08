@@ -12,7 +12,6 @@ class InputService:
         _screen (Screen): An Asciimatics screen.
         _keys (list): Points for up, dn, lt, rt.
     """
-
     def __init__(self, screen):
         """The class constructor."""
         self._screen = screen
