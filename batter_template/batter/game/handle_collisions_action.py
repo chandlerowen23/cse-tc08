@@ -3,6 +3,8 @@ from game import constants
 from game.action import Action
 from game.point import Point
 
+
+
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
     
@@ -56,9 +58,18 @@ class HandleCollisionsAction(Action):
 
         #  check if the ball hits the bottom of the screen
         if ball._position.get_y() == (constants.MAX_Y - 1):
-            # v = random.randint(-1,1)
-            # v_y = ball._velocity.get_y()
             velocity = Point(0,0)
             ball.set_velocity(velocity)
             # add game over to the screen
+
+
+            #this wouldnt work
+            # position = Point(constants.MAX_X/2, constants.MAX_Y/2)
+            # velocity = Point(0,0)
+            # game_over = Actor()
+            # game_over.set_text("Game Over!")
+            # game_over.set_position(position)
+            # game_over.set_velocity(velocity)
+            # Outputservice.draw_actor(game_over)
+            
 
