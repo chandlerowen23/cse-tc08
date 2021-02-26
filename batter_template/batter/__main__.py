@@ -16,6 +16,7 @@ def main(screen):
     # create the cast {key: tag, value: list}
     cast = {}
 
+    # create paddle
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y - 2)
     position = Point(x, y)
@@ -24,6 +25,7 @@ def main(screen):
     paddle.set_position(position)
     cast["paddle"] = [paddle]
 
+    # create bricks
     cast["brick"] = []
     for x in range(5, 75):
         for y in range(2, 6):
@@ -33,6 +35,7 @@ def main(screen):
             brick.set_position(position)
             cast["brick"].append(brick)
 
+    #create ball
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y / 2)
     position = Point(x, y)
@@ -41,8 +44,14 @@ def main(screen):
     ball.set_text("@")
     ball.set_position(position)
     ball.set_velocity(velocity)
-    ball.set_text("@")
     cast["ball"] = [ball]
+
+    position = Point(0,0)
+    score = Actor()
+    score.set_text(f"Score: ")
+    score.set_position(position)
+    score.set_velocity(position)
+    cast["score"] = [score]
     
     # create the script {key: tag, value: list}
     script = {}
