@@ -41,3 +41,4 @@ root                    (project root folder)
 ---
 * # TODO: Add your names and emails here
 # Chandler Owen, owenc@BYUI.edu
+# Christian Martinez, mar16125@byui.edu 
